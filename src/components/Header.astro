@@ -1,0 +1,49 @@
+---
+import Button1 from './Button1.astro'
+const logo = 'logo.svg'
+---
+<header>
+    <a href="#">
+        <img src={logo} alt="image logo">
+    </a>
+    <nav>
+        <a href="#">STORIES</a>
+        <a href="#">FEATURES</a>
+        <a href="#">PRICING</a>
+    </nav>
+    <Button1 type="button" color='dark'>GET AN INVITE</Button1>
+</header>
+
+<style>
+    header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 4.5rem;
+        background-color: var(--white-color);
+    }
+
+    img {
+        height: 100%;
+    }
+
+    nav {
+        display: flex;
+        gap: 2rem;
+        height: 1rem;
+
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.125rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--black-color);
+    }
+
+    nav a:hover {
+        opacity: 0.3;
+    }
+</style>
