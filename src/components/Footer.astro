@@ -1,10 +1,12 @@
 ---
 import SocialMediaGroup from "./SocialMediaGroup.astro";
+import Logo from "../icons/logo.astro";
 
 let year = new Date().getFullYear().toString();
 ---
 <footer>
     <div class="left-footer">
+        <Logo fill="white"/>
         <SocialMediaGroup />
     </div>
     <div class="right-footer">
