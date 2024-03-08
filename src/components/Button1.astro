@@ -1,0 +1,41 @@
+---
+interface Props {
+    type: 'button' | 'submit' | 'reset';
+    color: 'dark' | 'light';
+}
+
+const { type, color } = Astro.props;
+---
+
+<button type={type} class={`${color === 'dark' ? 'dark-button' : 'light-button'}`}>
+    <slot />
+</button>
+
+<style>
+
+    button {
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-family: var(--website-font);
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.125rem;
+    }
+
+    button:hover {
+        cursor: pointer;
+        color: var(--black-color);
+        background-color: var(--light-gray-color);
+    }
+
+    .dark-button {
+        color: var(--white-color);
+        background-color: var(--black-color);
+    }
+
+    .light-button {
+        color: var(--black-color);
+        background-color: var(--white-color);
+    }
+</style>
