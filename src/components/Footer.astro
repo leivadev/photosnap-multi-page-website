@@ -1,8 +1,12 @@
 ---
+import SocialMediaGroup from "./SocialMediaGroup.astro";
+
 let year = new Date().getFullYear().toString();
 ---
 <footer>
-    <div class="left-footer"></div>
+    <div class="left-footer">
+        <SocialMediaGroup />
+    </div>
     <div class="right-footer">
         <p class="copyright">Copyright {year}. All Rights Reserved</p>
     </div>

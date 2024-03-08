@@ -1,0 +1,38 @@
+---
+import Facebook from "../icons/facebook.astro"
+import Instagram from "../icons/instagram.astro"
+import Pinterest from "../icons/pinterest.astro"
+import X from "../icons/X.astro"
+import Youtube from "../icons/youtube.astro"
+---
+
+<div>
+    <a href="https://www.facebook.com/">
+        <Facebook />
+    </a>
+    <a href="https://www.youtube.com/">
+        <Youtube />
+    </a>
+    <a href="https://twitter.com/">
+        <X />
+    </a>
+    <a href="https://pinterest.com/">
+        <Pinterest />
+    </a>
+    <a href="https://www.instagram.com/">
+        <Instagram />
+    </a>
+</div>
+
+<style>
+    div {
+        display: flex;
+        gap: 0.85rem;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        width: 1.25rem;
+    }
+</style>
