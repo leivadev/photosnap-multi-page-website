@@ -1,0 +1,30 @@
+---
+let year = new Date().getFullYear().toString();
+---
+<footer>
+    <div class="left-footer"></div>
+    <div class="right-footer">
+        <p class="copyright">Copyright {year}. All Rights Reserved</p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 10.5rem;
+        background-color: var(--black-color);
+    }
+
+    .right-footer {
+        text-align: right;
+    }
+
+    .copyright {
+        color: var(--white-color);
+        opacity: 0.5;
+        text-align: right;
+        font-weight: 400;
+    }
+</style>
