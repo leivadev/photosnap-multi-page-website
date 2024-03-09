@@ -1,15 +1,19 @@
 ---
+import Hamburger from './Hamburger.astro'
 import Button1 from './Button1.astro'
 import Logo from '../icons/logo.astro'
 ---
 <header>
     <Logo fill="black"/>
+    <Hamburger />
     <nav>
-        <a href="#">STORIES</a>
-        <a href="#">FEATURES</a>
-        <a href="#">PRICING</a>
+        <a href="#">Stories</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
     </nav>
-    <Button1 type="button" color='dark' text="GET AN INVITE" />
+    <div class="button">
+        <Button1 type="button" color='dark' text="GET AN INVITE" />
+    </div>
 </header>
 
 <style>
@@ -21,15 +25,9 @@ import Logo from '../icons/logo.astro'
         background-color: var(--white-color);
     }
 
-    img {
-        height: 100%;
-    }
-
     nav {
         display: flex;
         gap: 2rem;
-        height: 1rem;
-
         text-align: center;
         font-size: 0.75rem;
         font-weight: 700;
@@ -39,9 +37,25 @@ import Logo from '../icons/logo.astro'
     nav a {
         text-decoration: none;
         color: var(--black-color);
+        text-transform: uppercase;
     }
 
     nav a:hover {
         opacity: 0.3;
     }
+
+    .button, nav {
+        display: none;
+    }
+
+    @media only screen and (min-width: 481px) {
+        .button {
+            display: block;
+        }
+
+        nav {
+            display: flex;
+        }
+    }
+
 </style>
