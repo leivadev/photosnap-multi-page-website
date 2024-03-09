@@ -1,0 +1,48 @@
+---
+import Arrow from '../icons/arrow.astro';
+interface Props {
+    type: 'button' | 'submit' | 'reset';
+    color: 'dark' | 'light';
+    text: string;
+}
+
+const { type, color, text } = Astro.props;
+---
+<div>
+    <button type={type} class={`${color === 'dark' ? 'dark-button' : 'light-button'}`}>
+        {text}
+    </button>
+    <Arrow stroke={`${color === 'dark' ? 'white' : 'black'}`} />
+</div>
+
+<style>
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        font-family: var(--website-font);
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.125rem;
+    }
+
+    button:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .dark-button {
+        color: var(--white-color);
+    }
+
+    .light-button {
+        color: var(--black-color);
+    }
+</style>
