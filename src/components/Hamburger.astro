@@ -1,0 +1,104 @@
+---
+import Button1 from './Button1.astro'
+import Lines from '../icons/lines.astro'
+import Close from '../icons/close.astro'
+---
+
+<div class="hamburger">
+    <Lines />
+</div>
+<div class="close-icon">
+    <Close />
+</div>
+<div class="expanded">
+    <nav>
+        <a href="#">Stories</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+    </nav>
+    <Button1 type="button" color='dark' text="GET AN INVITE" />
+</div>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const expanded = document.querySelector('.expanded');
+    const close = document.querySelector('.close-icon');
+
+    hamburger.addEventListener('click', () => {
+        expanded.style.display = 'flex';
+        close.style.display = 'block';
+        hamburger.style.display = 'none';
+    });
+
+    close.addEventListener('click', () => {
+        expanded.style.display = 'none';
+        close.style.display = 'none';
+        hamburger.style.display = 'block';
+    });
+
+    if (window.innerWidth >= 481) {
+        hamburger.style.display = 'none';
+    }
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 481) {
+            hamburger.style.display = 'none';
+            expanded.style.display = 'none';
+        } else {
+            hamburger.style.display = 'block';
+            close.style.display = 'none';
+            expanded.style.display = 'none';
+        }
+    });
+</script>
+
+<style>
+    .hamburger {
+        cursor: pointer;
+    }
+
+    .expanded {
+        display: none;
+    }
+
+    .close-icon {
+        display: none;
+        cursor: pointer;
+    }
+
+    .expanded {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+        position: absolute;
+        top: 70px;
+        background-color: var(--white-color);
+        width: 100vw;
+        padding: 1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.125rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--black-color);
+        text-transform: uppercase;
+    }
+
+    nav a:hover {
+        opacity: 0.3;
+    }
+
+</style>
