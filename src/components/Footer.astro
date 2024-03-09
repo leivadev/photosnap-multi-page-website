@@ -23,26 +23,29 @@ let year = new Date().getFullYear().toString();
 </footer>
 
 <style>
+
     footer {
         display: flex;
-        justify-content: space-between;
-        padding: 4rem 10.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 7rem;
+        padding: 3.5rem 0;
         background-color: var(--black-color);
     }
 
     .left-footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
     }
 
     .left-footer nav {
-        grid-row: 1 / -1;
-        grid-column: 2;
+        padding-top: 1rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
-        padding-left: 6.5rem;
     }
 
     .left-footer a {
@@ -57,8 +60,8 @@ let year = new Date().getFullYear().toString();
     .right-footer {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
     }
 
     .copyright {
@@ -67,4 +70,49 @@ let year = new Date().getFullYear().toString();
         font-size: 0.94rem;
         text-align: right;
     }
+
+    @media only screen and (min-width: 481px) {
+        footer {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: stretch;
+            padding: 4rem 2.5rem;
+        }
+
+        .left-footer {
+            display: grid;
+        }
+
+        .left-footer nav {
+            flex-wrap: wrap;
+            grid-row: 2;
+            padding-top: 0;
+            padding-bottom: 2.5rem;
+            flex-direction: row;
+            gap: 1.5rem;
+        }
+
+        .right-footer {
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    @media only screen and (min-width: 801px) {
+
+        .left-footer {
+            align-items: stretch;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .left-footer nav {
+            grid-row: 1 / -1;
+            grid-column: 2;
+            padding-left: 6.5rem;
+            padding-bottom: 0;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
 </style>
