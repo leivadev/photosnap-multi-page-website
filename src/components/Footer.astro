@@ -18,7 +18,7 @@ let year = new Date().getFullYear().toString();
     </div>
     <div class="right-footer">
         <Button2 type="submit" color="dark" text="GET AN INVITE" />
-        <p class="copyright">Copyright {year}. All Rights Reserved</p>
+        <p class="copyright">{year}. Made by <a class="github" href="https://github.com/leivadev/photosnap-multi-page-website">Leivadev</a></p>
     </div>
 </footer>
 
@@ -57,6 +57,10 @@ let year = new Date().getFullYear().toString();
         text-transform: uppercase;
     }
 
+    .left-footer a:hover {
+        opacity: 0.3;
+    }
+
     .right-footer {
         display: flex;
         flex-direction: column;
@@ -69,6 +73,16 @@ let year = new Date().getFullYear().toString();
         opacity: 0.5;
         font-size: 0.94rem;
         text-align: right;
+    }
+
+    .github {
+        color: var(--white-color);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .github:hover {
+        text-decoration: underline;
     }
 
     @media only screen and (min-width: 481px) {
