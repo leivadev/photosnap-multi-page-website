@@ -20,36 +20,37 @@ import Close from '../icons/close.astro'
 </div>
 
 <script>
-    const hamburger = document.querySelector('.hamburger');
-    const expanded = document.querySelector('.expanded');
-    const close = document.querySelector('.close-icon');
+    const hamburger = document.querySelector('.hamburger') as HTMLElement;
+    const expanded = document.querySelector('.expanded') as HTMLElement;
+    const closeBtn = document.querySelector('.close-icon') as HTMLElement;
 
-    hamburger.addEventListener('click', () => {
+    const showExpandedMenu = () => {
         expanded.style.display = 'flex';
-        close.style.display = 'block';
+        closeBtn.style.display = 'block';
         hamburger.style.display = 'none';
-    });
+    };
 
-    close.addEventListener('click', () => {
+    const hideExpandedMenu = () => {
         expanded.style.display = 'none';
-        close.style.display = 'none';
+        closeBtn.style.display = 'none';
         hamburger.style.display = 'block';
-    });
+    };
 
-    if (window.innerWidth >= 481) {
-        hamburger.style.display = 'none';
-    }
-
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
         if (window.innerWidth >= 481) {
             hamburger.style.display = 'none';
             expanded.style.display = 'none';
         } else {
             hamburger.style.display = 'block';
-            close.style.display = 'none';
-            expanded.style.display = 'none';
+            hideExpandedMenu();
         }
-    });
+    };
+
+    hamburger.addEventListener('click', showExpandedMenu);
+    closeBtn.addEventListener('click', hideExpandedMenu);
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
 </script>
 
 <style>
