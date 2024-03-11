@@ -19,7 +19,8 @@ import Logo from '../icons/logo.astro'
 <style>
     header {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding: 0 2rem;
         align-items: center;
         height: 4.5rem;
         background-color: var(--white-color);
@@ -49,6 +50,12 @@ import Logo from '../icons/logo.astro'
     }
 
     @media only screen and (min-width: 481px) {
+
+        header {
+            justify-content: space-around;
+            padding: 0;
+        }
+
         .button {
             display: block;
         }
