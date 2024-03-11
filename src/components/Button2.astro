@@ -9,7 +9,7 @@ interface Props {
 const { type, color, text } = Astro.props;
 ---
 <div>
-    <button type={type} class={`${color === 'dark' ? 'dark-button' : 'light-button'}`}>
+    <button type={type} class={`${color === 'dark' ? 'dark-button' : 'light-button'} textPrimary`}>
         {text}
     </button>
     <Arrow stroke={`${color === 'dark' ? 'white' : 'black'}`} />
@@ -26,11 +26,6 @@ const { type, color, text } = Astro.props;
     button {
         border: none;
         background-color: transparent;
-        font-family: var(--website-font);
-        text-align: center;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.125rem;
     }
 
     button:hover {

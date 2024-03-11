@@ -38,11 +38,34 @@ const { title } = Astro.props;
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
+		font-family: var(--website-font);
 	}
 
 	body {
-		font-family: var(--website-font);
 		min-width: 100vw;
 	}
 
+	.headingBold {
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 2.5rem;
+		color: var(--white-color);
+		letter-spacing: 0.2rem;
+		text-transform: uppercase;
+	}
+
+	.textGray {
+		font-size: 0.94rem;
+		font-weight: 400;
+		line-height: 1.5rem;
+		color: var(--white-color);
+		opacity: 0.6;
+	}
+
+	.textPrimary {
+		font-weight: 700;
+		letter-spacing: 0.125rem;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
 </style>

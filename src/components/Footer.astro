@@ -10,15 +10,15 @@ let year = new Date().getFullYear().toString();
         <Logo fill="white"/>
         <SocialMediaGroup />
         <nav>
-            <a href="/">Home</a>
-            <a href="/stories">Stories</a>
-            <a href="/features">Features</a>
-            <a href="/pricing">Pricing</a>
+            <a class="textPrimary" href="/">Home</a>
+            <a class="textPrimary" href="/stories">Stories</a>
+            <a class="textPrimary" href="/features">Features</a>
+            <a class="textPrimary" href="/pricing">Pricing</a>
         </nav>
     </div>
     <div class="right-footer">
-        <Button2 type="submit" color="dark" text="GET AN INVITE" />
-        <p class="copyright">{year}. Made by <a class="github" href="https://github.com/leivadev/photosnap-multi-page-website">Leivadev</a></p>
+        <Button2 type="submit" color="dark" text="Get an invite" />
+        <p class="textGray">{year}. Made by <a class="github" href="https://github.com/leivadev/photosnap-multi-page-website">Leivadev</a></p>
     </div>
 </footer>
 
@@ -48,18 +48,14 @@ let year = new Date().getFullYear().toString();
         gap: 1rem;
     }
 
-    .left-footer a {
+    .textPrimary {
         color: var(--white-color);
-        font-weight: 700;
         font-size: 0.75rem;
-        letter-spacing: 0.125rem;
-        text-decoration: none;
-        text-transform: uppercase;
     }
 
-    .left-footer a:hover {
-        opacity: 0.3;
-    }
+    .textPrimary:hover {
+		opacity: 0.3;
+	}
 
     .right-footer {
         display: flex;
@@ -68,10 +64,7 @@ let year = new Date().getFullYear().toString();
         gap: 2rem;
     }
 
-    .copyright {
-        color: var(--white-color);
-        opacity: 0.5;
-        font-size: 0.94rem;
+    .textGray {
         text-align: right;
     }
 
