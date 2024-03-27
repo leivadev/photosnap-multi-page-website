@@ -12,9 +12,9 @@ import Close from '../icons/close.astro'
 </div>
 <div class="expanded">
     <nav>
-        <a href="#">Stories</a>
-        <a href="#">Features</a>
-        <a href="#">Pricing</a>
+        <a class="textPrimary" href="#">Stories</a>
+        <a class="textPrimary" href="#">Features</a>
+        <a class="textPrimary" href="#">Pricing</a>
     </nav>
     <Button1 type="button" color='dark' text="GET AN INVITE" />
 </div>
@@ -73,7 +73,8 @@ import Close from '../icons/close.astro'
         gap: 1rem;
 
         position: absolute;
-        top: 70px;
+        top: 71px;
+        left: 0;
         background-color: var(--white-color);
         width: 100vw;
         padding: 1rem;
@@ -85,20 +86,15 @@ import Close from '../icons/close.astro'
         gap: 1.25rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-
         text-align: center;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.125rem;
     }
 
-    nav a {
-        text-decoration: none;
+    .textPrimary {
         color: var(--black-color);
-        text-transform: uppercase;
+        font-size: 0.75rem;
     }
 
-    nav a:hover {
+    .textPrimary:hover {
         opacity: 0.3;
     }
 

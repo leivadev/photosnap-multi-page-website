@@ -7,9 +7,9 @@ import Logo from '../icons/logo.astro'
     <Logo fill="black"/>
     <Hamburger />
     <nav>
-        <a href="/stories">Stories</a>
-        <a href="/features">Features</a>
-        <a href="/pricing">Pricing</a>
+        <a class="textPrimary" href="/stories">Stories</a>
+        <a class="textPrimary" href="/features">Features</a>
+        <a class="textPrimary" href="/pricing">Pricing</a>
     </nav>
     <div class="button">
         <Button1 type="button" color='dark' text="GET AN INVITE" />
@@ -30,18 +30,14 @@ import Logo from '../icons/logo.astro'
         display: flex;
         gap: 2rem;
         text-align: center;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.125rem;
     }
 
-    nav a {
-        text-decoration: none;
+    .textPrimary {
         color: var(--black-color);
-        text-transform: uppercase;
+        font-size: 0.75rem;
     }
 
-    nav a:hover {
+    .textPrimary:hover {
         opacity: 0.3;
     }
 
