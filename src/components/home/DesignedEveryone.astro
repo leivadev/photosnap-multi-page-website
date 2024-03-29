@@ -1,0 +1,76 @@
+---
+import Button2 from "../Button2.astro";
+---
+
+<section class="designed-for-everyone">
+    <div class="image-container"></div>
+    <div class="text-container">
+        <h2 class="headingBold">Designed for everyone</h2>
+        <p class="textGray">Photosnap can help you create stories that resonate with your audience.  Our tool is designed for photographers of all levels, brands, businesses you name it. </p>
+        <Button2 type="button" color="light" text="View the stories" />
+    </div>
+</section>
+
+<style>
+    .designed-for-everyone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--white-color);
+    }
+
+    .image-container {
+        width: 100%;
+        height: 294px;
+        background-image: url('home/mobile/designed-for-everyone.jpg');
+        background-repeat: sno-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .text-container {
+        padding: 4.5rem 1.5rem;
+    }
+
+    .headingBold {
+        margin-bottom: 1rem;
+        color: var(--black-color);
+    }
+
+    .textGray {
+        margin-bottom: 1.5rem;
+        color: var(--black-color);
+    }
+
+    @media only screen and (min-width: 481px) {
+        .create-share {
+            flex-direction: row-reverse;
+        }
+
+        .image-container {
+            height: 650px;
+            background-image: url('home/tablet/designed-for-everyone.jpg');
+            width: 40%;
+        }
+
+        .text-container {
+            width: 60%;
+            padding: 0 3rem;
+        }
+    }
+
+    @media only screen and (min-width: 901px) {
+
+        .image-container {
+            background-image: url('home/desktop/designed-for-everyone.jpg');
+            width: 60%;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            padding: 0 7rem;
+        }
+    }
+</style>
