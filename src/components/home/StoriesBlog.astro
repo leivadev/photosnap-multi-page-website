@@ -2,23 +2,23 @@
 import StoryBlock from "../StoryBlock.astro"
 ---
 
-<div class="container">
-    <StoryBlock imageRoute="stories/desktop/mountains.jpg" title="The Mountains" author="John Appleseed" />
-    <StoryBlock imageRoute="stories/desktop/cityscapes.jpg" title="Sunset Cityscapes" author="Benjamin Cruz" />
-    <StoryBlock imageRoute="stories/desktop/18-days-voyage.jpg" title="18 Days Voyage" author="Alexei Borodin" />
-    <StoryBlock imageRoute="stories/desktop/architecturals.jpg" title="Architecturals" author="Samantha Brooke" />
-</div>
+<section class="series-blog">
+        <StoryBlock imageRoute="stories/desktop/mountains.jpg" title="The Mountains" author="John Appleseed" />
+        <StoryBlock imageRoute="stories/desktop/cityscapes.jpg" title="Sunset Cityscapes" author="Benjamin Cruz" />
+        <StoryBlock imageRoute="stories/desktop/18-days-voyage.jpg" title="18 Days Voyage" author="Alexei Borodin" />
+        <StoryBlock imageRoute="stories/desktop/architecturals.jpg" title="Architecturals" author="Samantha Brooke" />
+</section>
 
 <style>
     @media only screen and (min-width: 481px) {
-        .container {
+        .series-blog {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
     }
 
     @media only screen and (min-width: 901px) {
-        .container {
+        .series-blog {
             grid-template-columns: repeat(4, 1fr);
         }
     }
