@@ -1,0 +1,76 @@
+---
+import Button2 from "../Button2.astro";
+---
+
+<section class="beautiful-stories">
+    <div class="image-container"></div>
+    <div class="text-container">
+        <h2 class="headingBold">Beautiful stories every time</h2>
+        <p class="textGray">We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone.</p>
+        <Button2 type="button" color="light" text="View the stories" />
+    </div>
+</section>
+
+<style>
+    .beautiful-stories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--white-color);
+    }
+
+    .image-container {
+        width: 100%;
+        height: 294px;
+        background-image: url('home/mobile/beautiful-stories.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .text-container {
+        padding: 4.5rem 1.5rem;
+    }
+
+    .headingBold {
+        margin-bottom: 1rem;
+        color: var(--black-color);
+    }
+
+    .textGray {
+        margin-bottom: 1.5rem;
+        color: var(--black-color);
+    }
+
+    @media only screen and (min-width: 481px) {
+        .beautiful-stories {
+            flex-direction: row;
+        }
+
+        .image-container {
+            height: 650px;
+            background-image: url('home/tablet/beautiful-stories.jpg');
+            width: 40%;
+        }
+
+        .text-container {
+            width: 60%;
+            padding: 0 3rem;
+        }
+    }
+
+    @media only screen and (min-width: 901px) {
+
+        .image-container {
+            background-image: url('home/desktop/beautiful-stories.jpg');
+            width: 60%;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            padding: 0 7rem;
+        }
+    }
+</style>
