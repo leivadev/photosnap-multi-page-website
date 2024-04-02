@@ -1,14 +1,14 @@
 ---
 interface Props {
     type: 'button' | 'submit' | 'reset';
-    color: 'dark' | 'light';
+    mode: 'dark' | 'light';
     text: string;
 }
 
-const { type, color, text } = Astro.props;
+const { type, mode, text } = Astro.props;
 ---
 
-<button type={type} class={`${color === 'dark' ? 'dark-button' : 'light-button'} textPrimary`}>
+<button type={type} class={`${mode === 'dark' ? 'dark-button' : 'light-button'} textPrimary`}>
     {text}
 </button>
 
