@@ -1,0 +1,38 @@
+---
+import StoryBlock from "../StoryBlock.astro"
+---
+
+<section class="stories-group">
+    <StoryBlock date="April 16th 2024" image="/stories/desktop/mountains.jpg" title="the Mountains" author="John Appleseed"/>
+    <StoryBlock date="April 14th 2024" image="/stories/desktop/cityscapes.jpg" title="Sunset Cityscapes" author="Benjamin Cruz"/>
+    <StoryBlock date="April 11th 2024" image="/stories/desktop/18-days-voyage.jpg" title="18 Days Voyage" author="Alexei Borodin"/>
+    <StoryBlock date="April 9th 2024" image="/stories/desktop/architecturals.jpg" title="Architecturals" author="Samantha Brooke"/>
+    <StoryBlock date="April 7th 2024" image="/stories/desktop/world-tour.jpg" title="World Tour 2019" author="Timothy Wagner"/>
+    <StoryBlock date="April 3rd 2024" image="/stories/desktop/unforeseen-corners.jpg" title="Unforeseen Corners" author="William Malcolm"/>
+    <StoryBlock date="March 29th 2024" image="/stories/desktop/king-on-africa.jpg" title="King on Africa: Part II" author="Tim Hillenburg"/>
+    <StoryBlock date="March 21st 2024" image="/stories/desktop/trip-to-nowhere.jpg" title="The Trip to Nowhere" author="Felicia Rourke"/>
+    <StoryBlock date="March 19th 2024" image="/stories/desktop/rage-of-the-sea.jpg" title="Rage of The Sea" author="Mohammed Abdul"/>
+    <StoryBlock date="March 16th 2024" image="/stories/desktop/running-free.jpg" title="Running Free" author="Michelle"/>
+    <StoryBlock date="March 11th 2024" image="/stories/desktop/behind-the-waves.jpg" title="Behind the Waves" author="Lamarr Wilson"/>
+    <StoryBlock date="March 9th 2024" image="/stories/desktop/calm-waters.jpg" title="Calm Waters" author="Samantha Brooke"/>
+    <StoryBlock date="March 5th 2024" image="/stories/desktop/milky-way.jpg" title="The Milky Way" author="Benjamin Cruz"/>
+    <StoryBlock date="March 4th 2024" image="/stories/desktop/dark-forest.jpg" title="Night at The Dark Forest" author="Mohammed Abdul"/>
+    <StoryBlock date="March 1st 2024" image="/stories/desktop/somwarpet.jpg" title="Somwarpet's Beauty" author="Michelle"/>
+    <StoryBlock date="February 25th 2024" image="/stories/desktop/land-of-dreams.jpg" title="Land of Dreams" author="William Malcolm"/>
+</section>
+
+<style>
+    @media only screen and (min-width: 481px) {
+        .stories-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 901px) {
+        .stories-group {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+</style>
