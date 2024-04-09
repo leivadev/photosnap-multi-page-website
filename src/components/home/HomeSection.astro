@@ -1,0 +1,106 @@
+---
+import Button2 from "../Button2.astro";
+
+interface Props {
+    image: string;
+    title: string;
+    description: string;
+    buttonText: string;
+    reversed: boolean;
+    color: 'black' | 'white';
+}
+
+const { image, title, description, buttonText, reversed, color } = Astro.props;
+---
+
+<section class=`${color === 'black' ? 'black-section' : 'white-section'} ${reversed ? 'row-reverse' : 'row'}`>
+    <div class="image-container" style={`background-image: url('${image}')`}></div>
+    <div class="text-container">
+        <h2 class="headingBold" style=`color: var(--${color != 'black' ? 'black' : 'white'}-color);`>{title}</h2>
+        <p class="textGray" style=`color: var(--${color != 'black' ? 'black' : 'white'}-color);`>{description}</p>
+        <Button2 type="button" mode={color === 'black' ? 'dark' : 'light'} text={buttonText} />
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .black-section {
+        background-color: var(--black-color);
+    }
+
+    .white-section {
+        background-color: var(--white-color);
+    }
+
+    .image-container {
+        width: 100%;
+        height: 17rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .text-container {
+        padding: 4.5rem 1.5rem;
+    }
+
+    .headingBold {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        letter-spacing: 0.25rem;
+    }
+
+    .textGray {
+        margin-bottom: 1.5rem;
+    }
+
+    @media only screen and (min-width: 481px) {
+
+        .row {
+            flex-direction: row;
+        }
+
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .image-container {
+            height: 37.5rem;
+            width: 40%;
+        }
+
+        .text-container {
+            width: 60%;
+            padding: 0 3rem;
+        }
+
+        .headingBold {
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+
+        .textGray {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media only screen and (min-width: 901px) {
+
+        .image-container {
+            width: 60%;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            padding: 0 7rem;
+        }
+    }
+</style>
