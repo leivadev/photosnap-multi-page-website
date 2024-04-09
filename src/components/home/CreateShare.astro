@@ -1,75 +1,13 @@
 ---
-import Button2 from "../Button2.astro";
+import HomeSection from "./HomeSection.astro";
 ---
 
-<section class="create-share">
-    <div class="image-container"></div>
-    <div class="text-container">
-        <h2 class="headingBold">Create and share your photo stories.</h2>
-        <p class="textGray">Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others.</p>
-        <Button2 type="button" mode="dark" text="Get an invite" />
-    </div>
-</section>
-
-<style>
-    .create-share {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--black-color);
-        color: var(--white-color);
-    }
-
-    .image-container {
-        width: 100%;
-        height: 294px;
-        background-image: url('home/mobile/create-and-share.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .text-container {
-        padding: 4.5rem 1.5rem;
-    }
-
-    .headingBold {
-        margin-bottom: 1rem;
-    }
-
-    .textGray {
-        margin-bottom: 1.5rem;
-    }
-
-    @media only screen and (min-width: 481px) {
-        .create-share {
-            flex-direction: row-reverse;
-        }
-
-        .image-container {
-            height: 650px;
-            background-image: url('home/tablet/create-and-share.jpg');
-            width: 40%;
-        }
-
-        .text-container {
-            width: 60%;
-            padding: 0 3rem;
-        }
-    }
-
-    @media only screen and (min-width: 901px) {
-
-        .image-container {
-            background-image: url('home/desktop/create-and-share.jpg');
-            width: 60%;
-        }
-
-        .text-container {
-            display: flex;
-            flex-direction: column;
-            width: 40%;
-            padding: 0 7rem;
-        }
-    }
-</style>
+<HomeSection
+    class:list="create-share"
+    title="Create and share your photo stories."
+    description="Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
+    buttonText="Get an invite"
+    image="home/desktop/create-and-share.jpg"
+    reversed={true}
+    color="black"
+/>
