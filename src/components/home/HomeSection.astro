@@ -5,12 +5,13 @@ interface Props {
     image: string;
     title: string;
     description: string;
-    buttonText: string;
+    buttonText?: string;
+    isButtonVisible: boolean;
     reversed: boolean;
     color: 'black' | 'white';
 }
 
-const { image, title, description, buttonText, reversed, color } = Astro.props;
+const { image, title, description, buttonText, isButtonVisible, reversed, color } = Astro.props;
 ---
 
 <section class=`${color === 'black' ? 'black-section' : 'white-section'} ${reversed ? 'row-reverse' : 'row'}`>
@@ -18,7 +19,7 @@ const { image, title, description, buttonText, reversed, color } = Astro.props;
     <div class="text-container">
         <h2 class="headingBold" style=`color: var(--${color != 'black' ? 'black' : 'white'}-color);`>{title}</h2>
         <p class="textGray" style=`color: var(--${color != 'black' ? 'black' : 'white'}-color);`>{description}</p>
-        <Button2 type="button" mode={color === 'black' ? 'dark' : 'light'} text={buttonText} />
+        {isButtonVisible && <Button2 type="button" mode={color === 'black' ? 'dark' : 'light'} text={buttonText || ''} />}
     </div>
 </section>
 
