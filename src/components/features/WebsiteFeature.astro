@@ -1,0 +1,80 @@
+---
+import FeatureItem from "../FeatureItem.astro"
+
+const benefits = [
+    {
+        title: "100% Responsive",
+        text: "No matter which the device you're on, our site is fully responsive and stories look beautiful on any screen.",
+        iconSrc: "features/desktop/responsive.svg",
+        alt: "icon of devices"
+    },
+    {
+        title: "No Photo Upload Limit",
+        text: "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.",
+        iconSrc: "features/desktop/no-limit.svg",
+        alt: "icon of infinity"
+    },
+    {
+        title: "Available to Embed",
+        text: "Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.",
+        iconSrc: "features/desktop/embed.svg",
+        alt: "icon of embedding to social media"
+    },
+    {
+        title: "Custom Domain",
+        text: "With Photosnap subscriptions you can host your stories on your own domain. You can also remove our branding!",
+        iconSrc: "features/desktop/custom-domain.svg",
+        alt: "icon of domain"
+    },
+    {
+        title: "Boost Your Exposure",
+        text: "Users that viewed your story or gallery can easily get notifed of new and featured stories with our built in mailing list.",
+        iconSrc: "features/desktop/boost-exposure.svg",
+        alt: "icon of mail"
+    },
+    {
+        title: "Drag & Drop Image",
+        text: "Easily drag and drop your image and get beautiful shots everytime. No over the top tooling to add friction to creating stories.",
+        iconSrc: "features/desktop/drag-drop.svg",
+        alt: "icon of drag and drop"
+    },
+]
+---
+
+<section class="benefits">
+    {benefits.map((benefit) => (
+        <FeatureItem
+            title={benefit.title}
+            text={benefit.text}
+            iconSrc={benefit.iconSrc}
+            alt={benefit.alt}
+        />
+    ))}
+</section>
+
+<style>
+    .benefits {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5rem 2rem;
+        gap: 3.5rem;
+    }
+
+    @media only screen and (min-width: 481px) {
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 5rem 9rem;
+            gap: 1.5rem;
+        }
+    }
+
+    @media only screen and (min-width: 901px) {
+        .benefits {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+</style>
