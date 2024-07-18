@@ -1,0 +1,64 @@
+---
+import Button2 from "./Button2.astro"
+---
+
+<section class="beta-invitation">
+    <h1 class="HeadingBold">We're in beta. Get your invite today!</h1>
+    <Button2 type="button" mode="dark" text="Get an invite" />
+</section>
+
+<style>
+    .beta-invitation {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 4rem 2rem;
+        background: url('shared/desktop/bg-beta.jpg') no-repeat center center/cover;
+    }
+
+    .HeadingBold {
+        color: var(--white-color);
+        font-size: 2rem;
+        text-transform: uppercase;
+        line-height: 2.5rem;
+        text-align: left;
+        letter-spacing: 3.333px;
+    }
+
+    @media only screen and (min-width: 481px) {
+        .beta-invitation {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4.25rem 2.5rem;
+        }
+
+        .HeadingBold {
+            max-width: 400px;
+            font-size: 2.5rem;
+            line-height: 3rem;
+            letter-spacing: 4.167px;
+        }
+    }
+
+    @media only screen and (min-width: 769px) {
+        .beta-invitation {
+            padding: 4.5rem 3rem;
+        }
+
+        .HeadingBold {
+            max-width: 500px;
+            font-size: 3rem;
+            line-height: 3.5rem;
+            letter-spacing: 5px;
+        }
+    }
+
+    @media only screen and (min-width: 801px) {
+        .beta-invitation {
+            padding: 4.5rem 7rem;
+        }
+    }
+</style>
