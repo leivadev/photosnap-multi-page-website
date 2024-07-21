@@ -50,6 +50,9 @@ import Button1 from '../Button1.astro';
 
 <script>
     const switchPricing = document.getElementById('switch-pricing') as HTMLInputElement;
+    const monthlyText = document.querySelector('.monthly') as HTMLHeadingElement;
+    const yearlyText = document.querySelector('.yearly') as HTMLHeadingElement;
+
     let isMonthlyActive = true;
 
     const monthlyData: { [key: string]: string } = {
@@ -67,6 +70,8 @@ import Button1 from '../Button1.astro';
 
     const togglePricing = () => {
     isMonthlyActive = !isMonthlyActive;
+    monthlyText.style.opacity = isMonthlyActive ? '1' : '0.5';
+    yearlyText.style.opacity = isMonthlyActive ? '0.5' : '1';
     updatePricing();
     };
 
