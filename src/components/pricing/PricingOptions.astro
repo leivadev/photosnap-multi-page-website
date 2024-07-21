@@ -1,0 +1,224 @@
+---
+import Button1 from '../Button1.astro';
+---
+
+<section class="pricing-options-container">
+    <div class='toggle-options'>
+        <h2 class='monthly'>Monthly</h2>
+        <label class='switch' for='switch-pricing'>
+            <input type='checkbox' id='switch-pricing' name='switch-pricing'>
+        </label>
+        <h2 class='yearly'>Yearly</h2>
+    </div>
+    <div class='pricing-cards-container'>
+        <div class='pricing-card' id='plan-basic'>
+            <div class='text-container'>
+                <h3 class='textPrimary'>Basic</h3>
+                <p class='textGray'>Includes basic usage of our platform. Recommended for new and aspiring photographers.</p>
+            </div>
+            <div class='price-container'>
+                <span class='price-content textPrimary'>$19.00</span>
+                <span class='textGray per-text'>per month</span>
+            </div>
+            <Button1 type='button' mode='dark' text='Pick Plan' />
+        </div>
+        <div class='pricing-card central-card' id="plan-pro">
+            <div class='text-container'>
+                <h3 class='textPrimary'>Pro</h3>
+                <p class='textGray'>More advanced features available. Recommended for photography veterans and professionals.</p>
+            </div>
+            <div class='price-container'>
+                <span class='price-content textPrimary'>$39.00</span>
+                <span class='textGray per-text'>per month</span>
+            </div>
+            <Button1 type='button' mode='light' text='Pick Plan' />
+        </div>
+        <div class='pricing-card' id="plan-business">
+            <div class='text-container'>
+                <h3 class='textPrimary'>Business</h3>
+                <p class='textGray'>Additional features available such as more detailed metrics. Recommended for business owners.</p>
+            </div>
+            <div class='price-container'>
+                <span class='price-content textPrimary'>$99.00</span>
+                <span class='textGray per-text'>per month</span>
+            </div>
+            <Button1 type='button' mode='dark' text='Pick Plan' />
+        </div>
+    </div>
+</section>
+
+
+</div>
+
+<script>
+    const switchPricing = document.getElementById('switch-pricing') as HTMLInputElement;
+    let isMonthlyActive = true;
+
+    const monthlyData: { [key: string]: string } = {
+        basic: '19.00',
+        pro: '39.00',
+        business: '99.00',
+        per: 'month'
+    };
+    const yearlyData: { [key: string]: string } = {
+        basic: '190.00',
+        pro: '390.00',
+        business: '990.00',
+        per: 'year'
+    };
+
+    const togglePricing = () => {
+    isMonthlyActive = !isMonthlyActive;
+    updatePricing();
+    };
+
+    const getPricingData = () => isMonthlyActive ? monthlyData : yearlyData;
+
+    const updatePricing = () => {
+        const pricingData = getPricingData();
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            const typePlan = card.id.split('-')[1];
+            const priceElement = card.querySelector('.price-content') as HTMLSpanElement;
+            const perTextElement = card.querySelector('.per-text') as HTMLSpanElement;
+            priceElement.textContent = `$${pricingData[typePlan]}`;
+            perTextElement.textContent = `per ${pricingData.per}`;
+        });
+    };
+
+    switchPricing.addEventListener('click', togglePricing);
+
+    updatePricing();
+</script>
+
+<style>
+    .pricing-cards-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .pricing-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.5rem;
+
+        background-color: #f5f5f5;
+        color: var(--black-color);
+        padding: 2.25rem;
+        text-align: center;
+    }
+
+    .text-container,
+    .price-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .price-container {
+        gap: 0;
+    }
+
+    .price-container .price-content {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        letter-spacing: 4.167px;
+    }
+
+    .textPrimary {
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        line-height: 1.5625rem;
+        letter-spacing: 0;
+    }
+
+    .pricing-card .textGray {
+        color: var(--black-color);
+    }
+
+    .central-card {
+        background-color: var(--black-color);
+        color: var(--white-color);
+    }
+
+    .central-card .textGray {
+        color: var(--white-color);
+    }
+
+    @media only screen and (min-width: 481px) {
+        .pricing-card {
+            display: grid;
+            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            padding: 2.5rem;
+            text-align: start;
+        }
+
+        .text-container {
+            align-items: start;
+        }
+
+        .price-container {
+            align-items: end;
+        }
+
+        .price-container .textGray {
+            margin-right: 0.75rem;
+        }
+    }
+
+    @media only screen and (min-width: 1160px) {
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2.5rem;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .text-container,
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .price-container {
+            gap: 0;
+        }
+
+        .price-container .textGray {
+            margin-right: 0;
+        }
+
+        .pricing-card {
+            max-height: 25rem;
+        }
+
+        .central-card {
+            min-height: 29rem;
+        }
+    }
+
+    @media only screen and (min-width: 481px) {
+        .pricing-cards-container {
+            padding: 2.5rem;
+        }
+    }
+
+    @media only screen and (min-width: 1160px) {
+        .pricing-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 1.5rem;
+            align-items: center;
+        }
+    }
+</style>
