@@ -89,6 +89,14 @@ import Button1 from '../Button1.astro';
 </script>
 
 <style>
+    .pricing-options-container {
+        padding: 1rem;
+    }
+
+    .yearly {
+        opacity: 0.5;
+    }
+
     .pricing-cards-container {
         display: flex;
         flex-direction: column;
@@ -148,12 +156,20 @@ import Button1 from '../Button1.astro';
     }
 
     @media only screen and (min-width: 481px) {
+        .pricing-cards-container {
+            padding: 2.5rem;
+        }
+
         .pricing-card {
             display: grid;
             align-items: start;
             grid-template-columns: 1fr 1fr;
             padding: 2.5rem;
             text-align: start;
+        }
+
+        .pricing-options-container {
+            padding: 1.5rem;
         }
 
         .text-container {
@@ -170,6 +186,13 @@ import Button1 from '../Button1.astro';
     }
 
     @media only screen and (min-width: 1160px) {
+        .pricing-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 1.5rem;
+            align-items: center;
+        }
+
         .pricing-card {
             display: flex;
             flex-direction: column;
