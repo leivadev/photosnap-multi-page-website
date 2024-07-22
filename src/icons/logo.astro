@@ -6,7 +6,6 @@ interface Props {
 const { fill } = Astro.props;
 ---
 
-
 <a href="/">
   <svg
     width="170"
@@ -45,3 +44,27 @@ const { fill } = Astro.props;
     </defs>
   </svg>
 </a>
+
+<style>
+  a {
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    opacity: 0.6;
+  }
+
+  svg {
+    width: 7.083rem;
+    height: 0.75rem;
+  }
+
+  @media only screen and (min-width: 481px) {
+    svg {
+      width: 10.625rem;
+      height: 1rem;
+    }
+  }
+</style>
