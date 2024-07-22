@@ -1,0 +1,207 @@
+---
+import CheckIcon from '../../icons/check.astro'
+
+const features = [
+    {
+        "name": 'Unlimited Story Posting',
+        "basic": true,
+        "pro": true,
+        "business": true
+    },
+    {
+        "name": 'Unlimited Photo Upload',
+        "basic": true,
+        "pro": true,
+        "business": true
+    },
+    {
+        "name": 'Embedding Custom Content',
+        "basic": false,
+        "pro": true,
+        "business": true
+    },
+    {
+        "name": 'Customize Metadata',
+        "basic": false,
+        "pro": true,
+        "business": true
+    },
+    {
+        "name": 'Advanced Metrics',
+        "basic": false,
+        "pro": false,
+        "business": true
+    },
+    {
+        "name": 'Photo Downloads',
+        "basic": false,
+        "pro": false,
+        "business": true
+    },
+    {
+        "name": 'Search Engine Indexing',
+        "basic": false,
+        "pro": false,
+        "business": true
+    },
+    {
+        "name": 'Custom Analytics',
+        "basic": false,
+        "pro": false,
+        "business": true
+    }
+]
+
+---
+
+<section class="feature-comparison-table-container">
+    <div class="feature-comparison-table">
+        <div class="table-header">
+            <h2 class="table-title headingBold">Compare</h2>
+            <div class="header-options headingBold">
+                <h3 class="header-option-feature">The Features</h3>
+                <h3 class="header-option">Basic</h3>
+                <h3 class="header-option">Pro</h3>
+                <h3 class="header-option">Business</h3>
+            </div>
+        </div>
+        <hr class="primary-divisor">
+        <div class="content">
+            {features.map(feature => (
+                <div class="row">
+                    <h4 class="row-feature">{feature.name}</h4>
+                    <div class="row-option">
+                        <h5>Basic</h5>
+                        {feature.basic && <CheckIcon />}
+                    </div>
+                    <div class="row-option">
+                        <h5>Pro</h5>
+                        {feature.pro && <CheckIcon />}
+                    </div>
+                    <div class="row-option">
+                        <h5>Business</h5>
+                        {feature.business && <CheckIcon />}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+
+    .headingbold {
+        color: var(--black-color);
+    }
+
+    .header-options, .row-feature, .row-option h5 {
+        color: var(--black-color);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: normal;
+        letter-spacing: 0.125rem;
+    }
+
+    .row-option h5 {
+        opacity: 0.5;
+        font-size: 0.625rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .feature-comparison-table-container {
+        padding: 1.75rem;
+        max-width: 45rem;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+    }
+
+    .table-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .table-title {
+        text-align: center;
+    }
+
+    .header-options {
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 1fr);
+        justify-items: center;
+        gap: 0.25rem;
+        margin: 1rem 0;
+    }
+
+    .primary-divisor {
+        border: 1px solid var(--black-color);
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--light-gray-color);
+    }
+
+    .row-option {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 0.25rem;
+    }
+
+    .row-feature {
+        justify-self: start;
+        grid-area: 1 / span 3;
+    }
+
+    .header-option-feature {
+        justify-self: start;
+    }
+
+    .header-option, .table-title {
+        display: none;
+    }
+
+    @media only screen and (min-width: 481px) {
+
+        .feature-comparison-table-container {
+            margin-bottom: 7rem;
+        }
+
+        .header-option-feature {
+            padding-left: 1rem;
+        }
+
+        .row {
+            grid-template-columns: 2fr repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            justify-items: center;
+        }
+
+        .row-feature {
+            grid-area: 1 / span 1;
+            margin-left: 1rem;
+        }
+
+        .row-option h5 {
+            display: none;
+        }
+
+        .header-option, .table-title {
+            display: block;
+        }
+
+    }
+
+    @media only screen and (min-width: 1160px) {
+        .feature-comparison-table-container {
+            margin-bottom: 10rem;
+        }
+
+    }
+</style>
