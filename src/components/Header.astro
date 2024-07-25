@@ -20,7 +20,7 @@ import Logo from '../icons/logo.astro'
     header {
         display: flex;
         justify-content: space-between;
-        padding: 0 2rem;
+        padding: 0 1rem;
         align-items: center;
         height: 4.5rem;
         background-color: var(--white-color);
@@ -35,6 +35,7 @@ import Logo from '../icons/logo.astro'
     .textPrimary {
         color: var(--black-color);
         font-size: 0.75rem;
+        transition: ease-in 0.2s;
     }
 
     .textPrimary:hover {
@@ -49,6 +50,8 @@ import Logo from '../icons/logo.astro'
 
         header {
             justify-content: space-around;
+            max-width: 1280px;
+            margin: 0 auto;
             padding: 0;
         }
 
