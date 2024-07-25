@@ -40,19 +40,19 @@ const { image, title, author, date } = Astro.props;
 
     .card-container:hover {
         cursor: pointer;
-        transform: translateY(-2rem);
+        transform: translateY(-1.6rem);
     }
 
     .card-container::after {
         content: '';
-        height: .6rem;
+        height: .375rem;
         width: 100%;
         background-image: var(--gradient-color);
         position: absolute;
         bottom: 0;
         left: 0;
         display: none;
-        z-index: 2;
+        z-index: 10;
     }
 
     .card-container:hover::after {
@@ -62,8 +62,7 @@ const { image, title, author, date } = Astro.props;
     .overlay {
         position: absolute;
         top:0;left:0;right:0;bottom:0;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-        z-index: 1;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
     }
 
     .card-container:hover .overlay {
