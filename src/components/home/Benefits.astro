@@ -40,13 +40,14 @@ const benefits = [
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        margin: 5rem 2rem;
+        padding: 5rem 2rem;
         gap: 3.5rem;
+        background-color: var(--white-color);
     }
 
     @media only screen and (min-width: 481px) {
         .benefits {
-            margin: 5rem 9rem;
+            padding: 5rem 9rem;
         }
     }
 
@@ -54,6 +55,8 @@ const benefits = [
         .benefits {
             flex-direction: row;
             gap: 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
         }
     }
 
