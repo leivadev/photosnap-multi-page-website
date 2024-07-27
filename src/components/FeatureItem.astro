@@ -3,19 +3,20 @@ interface Props {
     title: string;
     text: string;
     iconSrc: string;
+    loading?: string;
     alt?: string;
 }
 
-const { title, text, iconSrc, alt } = Astro.props;
+const { title, text, iconSrc, loading = 'lazy', alt } = Astro.props;
 ---
 
-    <div class="feature-item">
-        <img src=`${iconSrc}` alt=`${alt}` class="feature-icon">
-        <div class="feature-content">
-            <h3 class="feature-title">{title}</h3>
-            <p class="feature-text textGray">{text}</p>
-        </div>
+<div class="feature-item">
+    <img src=`${iconSrc}` alt=`${alt}` loading={loading as "lazy" | "eager" | null | undefined} class="feature-icon">
+    <div class="feature-content">
+        <h3 class="feature-title">{title}</h3>
+        <p class="feature-text textGray">{text}</p>
     </div>
+</div>
 
 <style>
     .feature-item {
