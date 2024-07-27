@@ -58,7 +58,7 @@ const benefits = [
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        margin: 5rem 2rem;
+        padding: 5rem 2rem;
         gap: 3.5rem;
     }
 
@@ -66,7 +66,7 @@ const benefits = [
         .benefits {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            margin: 5rem 8rem;
+            padding: 5rem 8rem;
             gap: 1.5rem;
         }
     }
@@ -74,6 +74,8 @@ const benefits = [
     @media only screen and (min-width: 1160px) {
         .benefits {
             grid-template-columns: repeat(3, 1fr);
+            max-width: 1440px;
+            margin: 0 auto;
         }
     }
 
