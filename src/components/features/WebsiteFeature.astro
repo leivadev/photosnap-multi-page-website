@@ -6,13 +6,15 @@ const benefits = [
         title: "100% Responsive",
         text: "No matter which the device you're on, our site is fully responsive and stories look beautiful on any screen.",
         iconSrc: "features/desktop/responsive.svg",
-        alt: "icon of devices"
+        alt: "icon of devices",
+        loading: "eager"
     },
     {
         title: "No Photo Upload Limit",
         text: "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.",
         iconSrc: "features/desktop/no-limit.svg",
-        alt: "icon of infinity"
+        alt: "icon of infinity",
+        loading: "eager"
     },
     {
         title: "Available to Embed",
@@ -48,6 +50,7 @@ const benefits = [
             text={benefit.text}
             iconSrc={benefit.iconSrc}
             alt={benefit.alt}
+            loading={benefit.loading}
         />
     ))}
 </section>
