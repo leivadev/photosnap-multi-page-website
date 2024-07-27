@@ -25,12 +25,28 @@ const { type, mode, text } = Astro.props;
 
     button {
         border: none;
+        position: relative;
         background-color: transparent;
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
     }
 
-    button:hover {
-        cursor: pointer;
-        text-decoration: underline;
+    button::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 2px;
+      width: 100%;
+      background: var(--gradient-color);
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    button:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
 
     .dark-button {
