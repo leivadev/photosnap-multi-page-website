@@ -52,6 +52,7 @@ import Close from '../icons/close.astro'
 
     hamburger.addEventListener('click', showExpandedMenu);
     closeBtn.addEventListener('click', hideExpandedMenu);
+    overlay.addEventListener('click', hideExpandedMenu);
     window.addEventListener('resize', handleResize);
 
     handleResize();
@@ -78,7 +79,7 @@ import Close from '../icons/close.astro'
         gap: 1rem;
 
         position: absolute;
-        top: 71px;
+        top: 4.5rem;
         left: 0;
         background-color: var(--white-color);
         width: 100vw;
@@ -92,7 +93,7 @@ import Close from '../icons/close.astro'
         bottom: 0;
         left: 0;
         width: 100vw;
-        height: 85vh;
+        height: 55vh;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
