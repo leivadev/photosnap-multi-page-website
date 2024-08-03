@@ -54,6 +54,7 @@ import Close from '../icons/close.astro'
     closeBtn.addEventListener('click', hideExpandedMenu);
     overlay.addEventListener('click', hideExpandedMenu);
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', hideExpandedMenu);
 
     handleResize();
 </script>
